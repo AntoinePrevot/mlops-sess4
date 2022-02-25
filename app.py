@@ -19,7 +19,7 @@ def predict(name):
         res = "fille"
     else:
         res = "garcon"
-    return {name: res}
+    return {"hello": "hello", name: res}
 
 
 def encoder(names):
