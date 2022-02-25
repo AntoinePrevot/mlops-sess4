@@ -55,8 +55,8 @@ jobs:
           docker build . flask-app
       
       - name: Deploy Docker image
-          run: |-
-            gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image flask-app --region europe-west1 --platform managed
+        run: |-
+          gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image flask-app --region europe-west1 --platform managed
   
   Build:
     runs-on: ubuntu-latest
