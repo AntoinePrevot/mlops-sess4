@@ -52,7 +52,7 @@ jobs:
       
       - name: Build image
         run: |-
-          docker build . flask-app
+          docker build . -t flask-app:latest
       
       - name: Deploy Docker image
         run: |-
