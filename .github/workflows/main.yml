@@ -56,7 +56,6 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-    - name: google auth
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
