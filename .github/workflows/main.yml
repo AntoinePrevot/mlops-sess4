@@ -45,7 +45,7 @@ jobs:
       
       - name: Update instance with docker image
         run: |-
-          gcloud compute instances update-container flask-app-antoine -container-image fedorah/flask-app
+          gcloud compute instances update-container flask-app-antoine -container-image docker.io/fedorah/flask-app
   
   Build:
     runs-on: ubuntu-latest
