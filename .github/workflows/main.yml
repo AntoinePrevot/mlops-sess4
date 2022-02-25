@@ -41,7 +41,7 @@ jobs:
       
       - name: Deploy Docker image
         run: |-
-          gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image fedorah/flask-app --region europe-west1 --platform managed
+          gcloud compute instances create-with-container flask-app-instance --container-image fedorah/flask-app
   
   Build:
     runs-on: ubuntu-latest
