@@ -49,6 +49,13 @@ jobs:
         run: |-
           gcloud --quiet beta compute ssh --zone "europe-west1-b" "flask-app" --project "moonlit-palace-338110" \
           -- docker stop "fedorah/flask-app" & docker rm "fedorah/flask-app" & docker pull fedorah/flask-app:latest
+      
+      -name: Build image
+        run: |-
+          docker build . flask-app
+      
+      -name: Deploy Docker image
+          run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image flask-app --region europe-west1 --platform managed
   
   Build:
     runs-on: ubuntu-latest
